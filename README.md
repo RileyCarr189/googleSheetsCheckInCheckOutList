@@ -1,6 +1,6 @@
-#### googleSheetsCheckInCheckOutList
+## googleSheetsCheckInCheckOutList
 
-###cDescription
+### Description
 
 A check-in/check-out list for Google Sheets made for beta theta pi events
 
