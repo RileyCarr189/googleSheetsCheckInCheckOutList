@@ -1,10 +1,9 @@
 # googleSheetsCheckInCheckOutList
-Check-In & Check-Out List Script
-GitHub - State [ alpha ]
 
 Description
 
 A check-in/check-out list for Google Sheets made for beta theta pi events
+
 
 
 How to Use
@@ -13,12 +12,14 @@ How to Use
 -Run the webapp
 
 
+
 Functionalities
 
 -Takes names from a Google Sheets document and organizes them alphabetically into a new sheet called log removing any duplicates
 -Search for a name or select from the drop-down list of names
 -Allows new people to be added and logged
 -Logged information is sent to sheet in real-time allowing for multiple users to use web app simultaneously
+
 
 
 Future Plans (optional)
