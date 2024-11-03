@@ -1,5 +1,7 @@
 ## googleSheetsCheckInCheckOutList
 
+#### https://script.google.com/macros/s/AKfycbwjRgRNrjNhwwAgiAztegMmOKQAIUU-xamNHPZjAjaxwcSbu3ymVLiZG8fhPFg-Ifkp/exec
+
 ### Description
 
 A check-in/check-out list for Google Sheets made for beta theta pi events
