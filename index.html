@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, select, button {
+      margin: 5px;
+      padding: 10px;
+    }
+  </style>
+  <script>
+    let allNames = [];
+
+    function loadNames() {
+      google.script.run.withSuccessHandler(populateNames).getNames();
+    }
+
+    function populateNames(names) {
+      allNames = names; // Store all names for searching
+      const select = document.getElementById("nameSelect");
+      select.innerHTML = "";
+      names.forEach(name => {
+        const option = document.createElement("option");
+        option.value = name;
+        option.textContent = name;
+        select.appendChild(option);
+      });
+    }
+
+    function searchNames() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const filteredNames = allNames.filter(name => name.toLowerCase().includes(query));
+ const select = document.getElementById("nameSelect");
+      select.innerHTML = "";
+      filteredNames.forEach(name => {
+        const option = document.createElement("option");
+        option.value = name;
+        option.textContent = name;
+        select.appendChild(option);
+      });
+    }
+
+    function checkIn() {
+      const name = document.getElementById("nameSelect").value;
+      google.script.run.checkIn(name);
+    }
+
+    function checkOut() {
+      const name = document.getElementById("nameSelect").value;
+      google.script.run.checkOut(name);
+    }
+
+    function addName() {
+      const name = document.getElementById("newNameInput").value;
+      google.script.run.addName(name);
+      document.getElementById("newNameInput").value = "";
+    }
+
+    function initialize() {
+      loadNames();
+      google.script.run.initializeLogSheet();
+    }
+  </script>
+</head>
+<body onload="initialize()">
+  <h1>Check-In/Check-Out System</h1>
+  <input id="searchInput" type="text" placeholder="Search names" oninput="searchNames()">
+  <select id="nameSelect"></select>
+  <button onclick="checkIn()">Check In</button>
+  <button onclick="checkOut()">Check Out</button>
+  <br>
+  <input id="newNameInput" type="text" placeholder="Add new name">
+  <button onclick="addName()">Add Name</button>
+</body>
+</html>
